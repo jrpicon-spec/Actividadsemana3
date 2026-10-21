@@ -1,0 +1,33 @@
+
+server:
+  port: 8081
+  error:
+    include-message: always
+
+spring:
+  application:
+    name: Actividad
+
+  flyway:
+    enabled: true
+    baseLineVersion:
+    Locations:
+      classpath: db/migration
+    sqlMigrationSuffixes: .sql
+    baselineOnMigrate: true
+    sqlMigrationPrefix: V
+    schemas: public
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Actividadspring
+    username: postgres
+    password: Jonna2112
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
